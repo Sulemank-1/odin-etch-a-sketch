@@ -36,8 +36,17 @@ function addHoverEffect() {
   for (let i = 0; i < squareDiv.length; i++) {
     squareDiv[i].addEventListener("mouseenter", () => {
       squareDiv[i].style.backgroundColor = "blue";
-      squareDiv[i].style.opacity = "0.5";
-      squareDiv[i].style.transition = "all 0.9s";
+      squareDiv[i].style.transition = "background-color 0.9s";
     });
+  }
+}
+
+function clearGrid() {
+  let squareDiv = document.querySelectorAll(".squareDiv");
+  for (let i = 0; i < squareDiv.length; i++) {
+    squareDiv[i].style.removeProperty("background-color");
+    squareDiv[i].style.removeProperty("opacity");
+    squareDiv[i].style.removeProperty("transition");
+    
   }
 }
