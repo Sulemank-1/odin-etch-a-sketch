@@ -1,16 +1,19 @@
+// DOM variables
 let container = document.querySelector(".container");
-let containerWidth = 500;
+const containerWidth = 500;
 let promptButton = document.querySelector(".promptButton");
 
 container.style.width = `${containerWidth}px`;
 
-promptButton.addEventListener("mousedown", () => {
+//Prompt button event listener
+promptButton.addEventListener("click", () => {
   container.innerHTML = "";
   let squarePerSide = parseInt(window.prompt("Enter sqaures per side"));
   gridMaker(squarePerSide);
   addHoverEffect();
 });
 
+// Grid generator function
 function gridMaker(squarePerSide) {
   let n = squarePerSide;
   if (n <= 100) {
@@ -27,6 +30,7 @@ function gridMaker(squarePerSide) {
   }
 }
 
+//Hover effect function
 function addHoverEffect() {
   let squareDiv = document.querySelectorAll(".squareDiv");
   for (let i = 0; i < squareDiv.length; i++) {
