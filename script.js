@@ -20,6 +20,17 @@ function gridMaker(squarePerSide) {
   }
 }
 
-squarePerSide = window.prompt("Enter sqaures per side");
+// squarePerSide = window.prompt("Enter sqaures per side");
 
-gridMaker(squarePerSide);
+gridMaker(4);
+
+let squareDiv = document.querySelectorAll(".squareDiv");
+
+for (let i = 0; i < squareDiv.length; i++) {
+  squareDiv[i].addEventListener("mouseenter", () => {
+    squareDiv[i].style.backgroundColor = "blue";
+    squareDiv[i].style.opacity = "0.5";
+    squareDiv[i].style.transition = "all 0.9s";
+
+  });
+}
