@@ -1,12 +1,18 @@
 let container = document.querySelector(".container");
 let containerWidth = 500;
-let squarePerSide = 0;
+let promptButton = document.querySelector(".promptButton");
 
 container.style.width = `${containerWidth}px`;
 
-function gridMaker(squarePerSide) {
-  if (squarePerSide <= 100) {
-    let n = squarePerSide;
+promptButton.addEventListener("mousedown", () => {
+  container.innerHTML = "";
+  let squarePerSide = parseInt(window.prompt("Enter sqaures per side"));
+  gridMaker(squarePerSide);
+  addHoverEffect();
+});
+
+function gridMaker(n) {
+  if (n <= 100) {
     for (let i = 1; i <= n * n; i++) {
       let divs = document.createElement("div");
       divs.setAttribute("class", "squareDiv");
@@ -20,17 +26,13 @@ function gridMaker(squarePerSide) {
   }
 }
 
-// squarePerSide = window.prompt("Enter sqaures per side");
-
-gridMaker(4);
-
-let squareDiv = document.querySelectorAll(".squareDiv");
-
-for (let i = 0; i < squareDiv.length; i++) {
-  squareDiv[i].addEventListener("mouseenter", () => {
-    squareDiv[i].style.backgroundColor = "blue";
-    squareDiv[i].style.opacity = "0.5";
-    squareDiv[i].style.transition = "all 0.9s";
-
-  });
+function addHoverEffect() {
+  let squareDiv = document.querySelectorAll(".squareDiv");
+  for (let i = 0; i < squareDiv.length; i++) {
+    squareDiv[i].addEventListener("mouseenter", () => {
+      squareDiv[i].style.backgroundColor = "blue";
+      squareDiv[i].style.opacity = "0.5";
+      squareDiv[i].style.transition = "all 0.9s";
+    });
+  }
 }
