@@ -11,7 +11,8 @@ promptButton.addEventListener("mousedown", () => {
   addHoverEffect();
 });
 
-function gridMaker(n) {
+function gridMaker(squarePerSide) {
+  let n = squarePerSide;
   if (n <= 100) {
     for (let i = 1; i <= n * n; i++) {
       let divs = document.createElement("div");
