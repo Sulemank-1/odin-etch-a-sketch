@@ -1,8 +1,11 @@
+body{
+  text-align: center;
+}
+
 .container{
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-
 }
 
 .squareDiv{
@@ -10,6 +13,7 @@
 }
 
 .promptButton{
-  margin: 0 auto;
+  font-size: 16px;
+  margin: 10px;
 }
 
